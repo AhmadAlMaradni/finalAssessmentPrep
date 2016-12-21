@@ -2,6 +2,8 @@
 <html>
     <head>
         <title> To Do List</title>
+        <link rel="stylesheet" type="text/css" href="css_style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     </head>
 <body>
     <div class="toDoDiv">
@@ -9,10 +11,29 @@
             <input type="text" id="inputToDO" class="textinput" placeholder="New to do ... " />
             <button id="addBtn" class="btnSend"> Add</button>
         </p>
-        <h1>Things to do before the immersive:</h1>
+        <h1 class="header">Things to do before the immersive:</h1>
         <ul>
             
         </ul>
     
     </div>
+
+    <script>
+        $(document).ready(function(){
+    $("#addBtn").click(function(){
+        $("ul").append(" <li>hello</i>.");
+    });
+});
+
+
+
+
+//        $(document).ready(function(){
+
+//     $("#addBtn").click(function(){
+//         $("inputToDO").val().text("hello");
+//     });
+// });
+
+    </script>
 </body>

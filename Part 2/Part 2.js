@@ -32,3 +32,73 @@
  */
 
 //writ your code here .....
+function footballTeam (player){
+	var teamobj = {}
+	teamobj.player = player;
+	teamobj.addInfo =addInfo;
+	teamobj.arrayOfPlayers= [];
+	teamobj.increaseLevel=increaseLevel;
+	teamobj.isAvailable=isAvailable;
+	teamobj.decrease=decrease;
+	teamobj.sortPalyerBy=sortPalyerBy;
+	return teamobj
+}
+	function infoo(age, position, level, availability){
+		return {
+		 age: age,
+		 position:position,
+		 level:level,
+		 availability:availability
+		 }
+	}
+
+
+function addInfo (age, position, level, availability ){
+	this.arrayOfPlayers.push(infoo(age, position, level, availability))
+}
+function increaseLevel(n){
+	 this.arrayOfPlayers[0].level = n + this.arrayOfPlayers[0].level;
+	 return this.arrayOfPlayers
+
+}
+
+function isAvailable(){
+	//var that = this
+	if(this.arrayOfPlayers[0].availability==="yes"){
+		return true
+	}
+	else{
+		return false
+	}
+}
+
+function decrease(n){
+	each(this.arrayOfPlayers,function(elem,i){
+		if(elem.age>30){
+			elem.level=elem.level-n;
+		}
+	})
+	return this.arrayOfPlayers
+}
+
+function sortPalyerBy (key){
+	
+	return this.arrayOfPlayers.sort(function(a,b){
+		return ((a[key] < b[key]) ? -1 : ((a[key] > b[key]) ? 1 : 0))
+	})
+}
+
+
+
+
+function each(coll, func) {
+     if (Array.isArray(coll)) {
+         for (var i = 0; i < coll.length; i++) {
+                func(coll[i], i);
+         }
+     } else {
+         for (var key in coll) {
+                func(coll[key], key);
+         }
+     }
+}
